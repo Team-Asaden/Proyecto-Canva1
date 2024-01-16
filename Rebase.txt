@@ -1,0 +1,50 @@
+
+
+  lo que ahcemos con rebase es agregar informacion de una rama a otra despues de que la rama ha sida creada y pone esta informacion antes que todas los modificacionnes de la rama
+
+   Ejemplo : si tenemos una rama que nesesita commits hechos en el master (u otra rama ) , despeus de su creacion añadimos
+ 	git rebase rama1(la que nesesita la informacion) rama2 , aqui lo comir hechos despues de la separacion de la rama2 se pasan a al rama1 
+
+rama 2  rama 1
+
+1       1
+2  ---- 2
+3       4
+        5
+
+
+/se separan en el commit 2
+
+  git rebase rama1 rama2
+
+
+1     1
+2 ----2
+3     3
+      4
+      5
+
+
+   
+
+  Rebase interactivo
+
+
+**todas las modificacionesd e rebase y ne general de unir cambioar de nombre o separafr commits
+	solo se hacen si y solo si es que el proyecto esta unicament
+		de manera local, es decir , si es que no ha salido a producion
+
+
+
+
+  giT rebase -i HEAD~4
+
+
+Nos manda a un "menu" donde es posible editar y eliminar commits, el 4 indica la cantidad de commits a modificar desde en head o un hash
+
+	/s, squash une al commit elegio junto con su anterior
+        
+        /r, rework permite cambiar el nombre de un commit
+    
+    
+

@@ -1,0 +1,27 @@
+
+
+
+		
+	  si es que queremos revisar el trabajo de otros copañeros en un trabajod e varias ramas
+
+         
+      git fetch
+	git branch -a / para ver todas las ramas
+	  git checkout rama-nombre / unirse a al rama de otro
+
+       
+       asi cualquier compañero puede hacer push de cualquier rama
+
+	git checkout master
+	  git merge rama-capitan / une las ramas
+	    git push 
+
+
+       Unir unacamente la rama al github : 
+
+	
+
+
+         git push origin rama-silver / une solo la rama al github
+					/ para si poder hacer un pull request
+

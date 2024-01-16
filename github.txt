@@ -1,0 +1,74 @@
+
+
+paraa añadir un repositorio remoto se usa el comando :
+		/ git add remote nombredelremote link
+
+
+git remote-v
+  /nos da una listade remotes
+
+
+git push -u origin master
+
+despues de ejecutar le comando se nos pedina usuario y ocntraseña de github al ponerla la ram amster se sube a github
+
+
+
+git pull / trae los datos en el origen que esta seteado por defecto 
+		/git pull origin rama
+
+
+		git config pull.rebase fallse # merge (default)
+     		git config pull.rebase true   # rebase
+		git config pull.ff only       # fast-foreawd only
+
+
+  git remote -v / nos indica el origen que tenemos
+	/ fetch : obtener
+	/ Push : subir
+
+
+
+git clone linkgit
+	//clona un repositorio de github
+
+
+
+   pull Request / rama que se desplego en cierto punto del tiempo , cuendo se quiera unir la rama se puede hacer mediante un pull request
+			/ la idea del pull request es que no solo alguien llege y la integre 
+				/la idea del pull reques es hacer un analizis previo a un  marge
+
+ / antes de hacer una union al main se hace una prueba, deveria de ahber una persona ocn el suficente conocimiento del proyecto para ver conflictos problemas o estandares
+
+ 
+     // lo recomendable o lo "normal" es hacer el pulll request desde local o lanzarlo desde github si es que clonas un repositorio y detectas un bug 
+
+/// UN pull request se usa para poner a discucion si es que hay que hacer ciertos cambios en una rama
+
+
+
+    Un git fetch nos puede servir para recuperarf el historial de nuestro repositorio de github, sin embargo despues de esto tenemos que aplicar git pull para tener el repositorio actualizado en local
+
+
+
+   git checkout hash nombrearchivo
+		te dezplaza en el tiempo al tiempo de commit del hash solo en/los archivos que seleccionaste 
+
+
+                        ALIAS
+	git remote add upstream link 
+		//nos da un origen de solo lectura 
+
+git remote prune origin
+	/Actualiza algunas cosas partiendo del origen, entre estas estan las ramas , borra las ramas qeu esten borradas en el origen
+
+
+
+
+
+
+
+
+
+
+  

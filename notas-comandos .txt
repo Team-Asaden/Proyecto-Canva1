@@ -1,0 +1,181 @@
+
+  1.- git help
+	1.|-. git help x / documentacion web de x
+
+  2. git-config
+	2.| 
+
+		//si no hay ninguna retro alimentacion solo uiqere decir que el comando fue ejecutado de forma correcta
+	2.|| git config --global -e / usuario, email y alias 
+		es posible modiifcar desde ahi mismo con a y salir con :wq! 
+
+   3.- git init 
+	3.| inicializa el repositorio
+
+
+
+   \*  no modificar la carpeta autogenrerada de git  *\
+   
+    3.1.- git status / lista de los archivos que estan o no en el esenario y si esque dufrieron cambios desde el ultimo commit , ademas de decirnos la rama en la que nos encorntramos
+
+   4.- git add archivox  / . (todos)
+       git add *.tipo (*.html) para añadir toods los archivos de un mismo tipo
+
+   5.- git reset archivox
+
+   6.- git commit -m "nombre del commit"
+	""toma la footgrfia" , a los archivos que estan dentro
+
+//working tree clean, ningun cambio desde el ultimo commit
+
+//es posible viaajr a cualquier commit
+
+
+   7.- git checkout -- . / regresa al ultimo commit
+	7-| solo funciona con los archivos que estan dentro de el git
+	7.|| los archivos que no estan dentro del git estan marcados el VScode
+
+   8.- git branch / nos dice en que rama estamos trabajando
+
+ //al rama del * es en la que estamos trabajando
+    // son como "universos alternos" , en 
+
+
+
+8.- git config --global alias.nombrealias "funccin de alias"
+	//ejem :  git config --global alias.lg "log --oneline"
+		//cada vez que ejecute git lg se esecuta git log --oneline
+
+
+
+11.- git diff / compara tu vercoin actual con la anterior (sin contar archivos en esenario)
+
+ 
+		11.| git diff --staged / cuanta los archivos en esenario
+
+
+   12-.  git commit --amend -m "instalaciones actualizadas" / cambia el nombre de el ultimo commit
+
+
+
+13.-reset --soft HEAD^x / nos lleva a un commit en esepcifico el HEAD indica el ultimo commit y el ^1 el anterior a este asicomo el ^2 el anteanterior , es posible remplazar x por cualquier numero
+    	  		/ademas de que el HEAD  ess remplazable por el hash de un commit
+
+
+
+/// un puch a un repositorio externo debe de ser como escrito en piedra, no es recomendable dirigirse a commits muy anteriores
+
+
+
+    14.- git reset / nos mueve a un commit especificado por HEAD^x o por un hash
+   		//--soft /  (no midifica nada)
+		//--mixed / (quita todo , pero solo del git , los archivos siguen ahi sin cambios)
+		//--hard / ("elimina", las modificaciones que utvieron lugar despues de commit selecionado)
+		
+
+
+     15.- git reflog / nos muestra un historial de todas las modificaciones al git
+
+/// la forma de recuperar cosas desde un reset --hard es desde un mismo reseet hard con el hash de el lugar a donde queremos ir , podemos usar commits "eliminados" con reflog
+
+
+     16-. git mv destruir-mundo.md salvar-mundo.md / mueve un archivo de un lugar a otro, tambien le cambia el nombre de modo que es posible saber su nombre anterior al cambio
+	 git mv %nombre archivo% %ubicacion+nuevo nombre archivo%
+
+
+
+     17 git rm %nombre de arichivo% / elimina el archivo
+               // no lo quita del reset
+
+
+
+//git reset --hard es (sin especificar archivo ) es muy similar al git checkout . 
+		//nos regresa al ultimo commit
+
+
+/// si es que cambiaomos el nombre del archivo "normalmente" (atravez de VS o solo de el mismo windows)
+  //git pensara que emos borrado el archivo y creado uno nuevo
+    /sin embargo al momento de hacer un git add. o un git -u %nombre de archivo% gti indentidfica qeu es que son el mismo archivo (si es que se muestra la R)
+      este cambio de nobre se v al esenario y de esrta manera podemos hacer un commit con el cambio de nombre
+
+
+
+
+ seccion 4 ramas y conflictos
+
+
+merge - uniones
+   //1 Fast-forward
+       /git no detecta ningun cambio en la rama principal , los commits de la rama se unen al main como sifueran propias de este
+   
+   //2 Uniones automaticas
+       /git detecta cambios en la rama principal , aun asi no hay conflictos y se unene automaticamente
+
+    //3 Manual
+	/git detecta problemas por diferencias de codigo entre ramas , se tiene que arreglar manuealmente y se crea un commit nuevo
+  
+
+
+		git branch nombre-rama / crea una nueva rama
+		git checkout nombre-rama / te mueve a esa rama
+
+		git merge nombre-rama / une a nombre-rama a al rama en la que esats posicionado actualmete
+                
+		git branch -d nombre-rama / elimina nombre rama (si es que ahy cambios no guardados te avisa , puede añadir -f al finla para borrar con o sin cambios 										
+						
+		git checkout -b rama-villanos / crear rama y te mueves a esta
+   
+
+
+       Tags/ Referencia a un commit en especifico
+ 		
+		git tag nombre-tag / crea un tag
+		gti tag / da una lista de tags
+		
+		git tag  -a nombre-tag hash -m "nombre visible en lg"
+		git show nombre-hash / nos da mas indo sobre el commmit qur marco el tag
+
+
+
+
+	
+
+	Seccion 5 : stash y rebase
+
+
+
+
+  git stash / genera una stash
+  git stash pop / trae los cmabios del stash y tambien borra este
+  git stash clear / borra todos los stash
+  git stash apply stash@{1} / te dirige a un stash especifico
+  git stash drop / borra el satsh mas reciente, tambien puedes especificar cualborrar depeusdel drop
+  git stash show stash@{x} / muestar las moidifcaciones esteficicas de un stash
+  git stash save "nombre del stash" / añade una stash con un nombre en esepficico
+  git stash list / lista de satsh , añade --stat para ver mas info de cada uno
+
+Es mejor usar simpre el stash de manera unicamente temporal y no poner muchas cosas aqui
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
