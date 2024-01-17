@@ -1,9 +1,49 @@
-var myCanvas = document.getElementById("myCanvas");
-var context = myCanvas.getContext("2d");
+const canvas = document.getElementById('canvas');
 
-context.fillRect(5, 5, 145, 145);
-context.fillStyle = "rgb(0, 162, 232)";
-context.fillRect(40, 55, 145, 145);
-context.fillStyle = "rgba(255, 0, 0, 0.2)";
-context.fillRect(75, 105, 145, 145);
- 
+
+if (canvas.getContext){
+const ctx = canvas.getContext('2d');
+console.log("canvas soportado");
+
+ctx.fillStyle = 'rgb(200 0 0)'
+ctx.fillRect(10, 10, 50, 25);
+
+ctx.fillStyle = 'rgb(0 0 200 / 50%)';
+ctx.fillRect(30, 20, 50, 25);
+
+   //borra cierta area
+ ctx.clearRect(30, 20, 30, 15);
+
+  //dibuja un borde
+ctx.strokeRect(10,10, 70, 35);
+
+
+
+} else {
+console.log('canvas no soportado');
+
+}
+
+
+
+const drawTriangulo = () => {
+    const canvas = document.getElementById("canvas");
+    if (canvas.getContext) {
+      const ctx = canvas.getContext("2d");
+  
+      ctx.beginPath();
+      ctx.moveTo(0, 50);
+      ctx.lineTo(100, 50);
+      ctx.lineTo(0, 25);
+      ctx.fill();
+
+      ctx.beginPath();
+      ctx.moveTo(100, 50);
+      ctx.lineTo(100, 0);
+      ctx.lineTo(0, 0);
+      ctx.closePath();
+      ctx.stroke();
+    }
+  }
+
+  drawTriangulo();
