@@ -47,3 +47,85 @@ const drawTriangulo = () => {
   }
 
   drawTriangulo();
+
+
+
+
+let x = 0;
+let y = 0;
+let width = 20;
+let height = 10;
+
+const moveCanvas = document.getElementById('canvasMove');
+const cav = moveCanvas.getContext('2d');
+const draw_p1 = () =>{
+
+ cav.moveTo(120,25);
+ cav.fillStyle = '200 0 0'
+ cav.fillRect(x, y, width, height);
+
+}
+const del_p1 = () =>{
+    cav.clearRect(0, 0, canvas.width, canvas.height);
+}
+
+draw_p1();
+
+// window.onkeydown = function(event)  {
+//     let num = event.keyCode;
+//     event.preventDefault();
+//     if (num == 87){ // 'W'
+//       y -= 10;
+//       del_p1();
+//       draw_p1();
+      
+//     }
+// }
+
+// window.onkeydown = function(event)  {
+//     let num = event.keyCode;
+//     event.preventDefault();
+//     if (num == 83){ // 'S'
+//       y += 10;
+//       del_p1();
+//       draw_p1();
+//     }
+// }
+
+// window.onkeydown = function(event)  {
+//     let num = event.keyCode;
+//     event.preventDefault();
+//     if (num == 65){ // 'A'
+//       x -= 10;
+//       del_p1();
+//       draw_p1();
+//     }
+// }
+
+
+// window.onkeydown = function(event)  {
+//     let num = event.keyCode;
+//     event.preventDefault();
+//     if (num == 68){ // 'd'
+//       x += 10;
+//       del_p1();
+//       draw_p1();
+//     }
+// }
+
+window.onkeydown = function(event) {
+    var num = event.keyCode;
+    event.preventDefault();
+    if (num == 87) { // 'W'
+     y -= 10;
+    } else if (num == 83) { // 'S'
+     y += 10;
+    } else if (num == 65) { // 'A'
+      x -= 10;
+    } else if (num == 68) { // 'D'
+      x += 10;
+    }
+    del_p1();
+    draw_p1();
+  }
+  
