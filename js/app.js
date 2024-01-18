@@ -60,10 +60,12 @@ const moveCanvas = document.getElementById('canvasMove');
 const cav = moveCanvas.getContext('2d');
 const draw_p1 = () =>{
 
- cav.moveTo(120,25);
- cav.fillStyle = '200 0 0'
- cav.fillRect(x, y, width, height);
-
+//  cav.moveTo(120,25);
+//  cav.fillStyle = '200 0 0'
+//  cav.fillRect(x, y, width, height);
+let personaje = new Image()
+personaje.src = '';
+personaje.onload = () => {cav.drawImage(personaje,x,y);}
 }
 const del_p1 = () =>{
     cav.clearRect(0, 0, canvas.width, canvas.height);
