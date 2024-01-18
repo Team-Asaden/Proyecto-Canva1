@@ -53,79 +53,62 @@ const drawTriangulo = () => {
 
 let x = 0;
 let y = 0;
+let px = 0;
+let py = 0;
 let width = 20;
 let height = 10;
 
 const moveCanvas = document.getElementById('canvasMove');
 const cav = moveCanvas.getContext('2d');
+
+
 const draw_p1 = () =>{
 
 //  cav.moveTo(120,25);
 //  cav.fillStyle = '200 0 0'
 //  cav.fillRect(x, y, width, height);
 let personaje = new Image()
-personaje.src = '';
-personaje.onload = () => {cav.drawImage(personaje,x,y);}
+personaje.src = '../assets/Sprout Lands - Sprites - Basic pack/Characters/CharakterSpritesheet.png';
+personaje.onload = () => {cav.drawImage(personaje,px,py,40,40,x,y,40,40);}
 }
 const del_p1 = () =>{
     cav.clearRect(0, 0, canvas.width, canvas.height);
 }
 
 draw_p1();
+  flag = 0;
 
-// window.onkeydown = function(event)  {
-//     let num = event.keyCode;
-//     event.preventDefault();
-//     if (num == 87){ // 'W'
-//       y -= 10;
-//       del_p1();
-//       draw_p1();
-      
-//     }
-// }
-
-// window.onkeydown = function(event)  {
-//     let num = event.keyCode;
-//     event.preventDefault();
-//     if (num == 83){ // 'S'
-//       y += 10;
-//       del_p1();
-//       draw_p1();
-//     }
-// }
-
-// window.onkeydown = function(event)  {
-//     let num = event.keyCode;
-//     event.preventDefault();
-//     if (num == 65){ // 'A'
-//       x -= 10;
-//       del_p1();
-//       draw_p1();
-//     }
-// }
-
-
-// window.onkeydown = function(event)  {
-//     let num = event.keyCode;
-//     event.preventDefault();
-//     if (num == 68){ // 'd'
-//       x += 10;
-//       del_p1();
-//       draw_p1();
-//     }
-// }
+const movementP1 = () => {
+  if(flag == 0){
+      px = 100;
+      flag =1;
+     }else{
+        px = 150;
+        flag= 0;
+     }
+}
 
 window.onkeydown = function(event) {
     var num = event.keyCode;
     event.preventDefault();
     if (num == 87) { // 'W'
      y -= 10;
+     py =50;
+     movementP1();
     } else if (num == 83) { // 'S'
      y += 10;
+    py =0 ;
+     movementP1();
+     
+   
     } else if (num == 65) { // 'A'
       x -= 10;
+      py = 100;
+      movementP1();
     } else if (num == 68) { // 'D'
       x += 10;
+      py = 150;
+      movementP1();
     }
     del_p1();
     draw_p1();
