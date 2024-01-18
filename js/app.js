@@ -2,7 +2,7 @@ var canva = document.getElementById("canva-1");
 var ctx = canva.getContext("2d");
 
 
-let x=100,y=100,w=100,h=100;
+let x=400,y=200,w=50,h=50;
 ctx.fillStyle = "blue";
 ctx.strokeStyle = "green";
 ctx.fillRect(x,y,w,h);
@@ -16,34 +16,33 @@ const azul = () => {
 const rojo = () => {
     ctx.fillStyle = "red";
     ctx.fillRect(x,y,w,h);
-    console.log(ctx.fillStyle)
 }
 const verde = () => {
 
     ctx.fillStyle = "green";
     ctx.fillRect(x,y,w,h);
-    console.log(ctx.fillStyle)
 }
 const arriba = () => {
-    y = y -1;
-    ctx.fillRect(x,y,w,h)
-
+    y = y -35;
+    ctx.fillRect(x,y,w,h);
+    ctx.clearRect(x,y+50,w,h);
 }
 const abajo  = () => {
-    y = y +1;
+    y = y +35;
     ctx.fillRect(x,y,w,h)
-
+    ctx.clearRect(x,y-50,w,h);
 }
 const izquierda = () => {
-    x = x + 1;
+    x = x - 35;
     ctx.fillRect(x,y,w,h)
-
+    ctx.clearRect(x+50,y,w,h);
 }
 const derecha = () => {
-    x = x -1;
+    x = x + 35;
     ctx.fillRect(x,y,w,h)
-
+    ctx.clearRect(x-50,y,w,h);
 }
+
 
 
 document.getElementById('blue').addEventListener('click',azul);
