@@ -4,8 +4,8 @@ var ctx = canvas.getContext("2d");
 
 let x=0;
 let y = 0;
-let px = 0;
-let py = 0;
+let px = 20;
+let py = 100;
 
 
 
@@ -16,8 +16,8 @@ const draw_p1 = () =>{
     var nave = new Image();
     nave.src = "/imagenes/nave-espacial.png";
     nave.onload = () => {
-        ctx.drawImage(nave,px,py,20,20,x,y,20,20)
-        console.log("Mov")
+        ctx.drawImage(nave,px,py,500,500,x,y,50,50);
+        console.log("Mov");
     }
    }
 const del_p1 = () =>{
