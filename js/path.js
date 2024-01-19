@@ -1,23 +1,30 @@
-var canva = document.getElementById("path");
-var ctx = canva.getContext("2d");
-
-let p1 = new Path2D();
-p1.rect(0,0,100,150);
-
-let p2 = new Path2D();
-p2.rect(0, 0, 100, 75);
+var canvas = document.getElementById("path");
+var ctx = canvas.getContext("2d");
 
 
-let m = new DOMMatrix();
-m.a = 1;
-m.b = 0;
-m.c = 0;
-m.d = 1;
-m.e = 200;
-m.f = 0;
+function setFullscreen(){
+    var w = window.innerWidth / canvas.width;
+    var h = window.innerHeight / canvas.height;
+    var scale = Math.min(h, w);
+
+    canvas.style.width = (canvas.width * scale) + 'px';
+    canvas.style.height = (canvas.height * scale) + 'px';
+    canvas.style.position = 'fixed';
+    canvas.style.left = '50%';
+    canvas.style.top = '50%';
+    canvas.style.marginLeft = -(canvas.width * scale) / 2 + 'px';
+    canvas.style.marginTop = -(canvas.height * scale) / 2 + 'px';
+}
 
 
-p1.addPath(p2, m);
+function unsetFullscreen(){
+    canvas.style.width = '';
+    canvas.style.height = '';
+    canvas.style.position = '';
+    canvas.style.left = '';
+    canvas.style.top = '';
+    canvas.style.marginLeft = '';
+    canvas.style.marginTop = '';
+}
 
-
-ctx.fill(p1);
+//https://juegoscanvas.blogspot.com/
